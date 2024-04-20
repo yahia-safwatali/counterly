@@ -48,7 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
   void _resetCounter() {
     setState(() {
       _counter = 0;
+
+      // Show a snackbar
+      _showResetSnackBar();
     });
+  }
+
+  void _showResetSnackBar() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Counter reset')),
+    );
   }
 
   @override
